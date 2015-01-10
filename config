@@ -195,20 +195,5 @@ bindsym $mod+F6 exec curl http://localhost:2000/command/super/playpause
 bindsym $mod+F7 exec curl http://localhost:2000/command/super/prev
 bindsym $mod+F8 exec curl http://localhost:2000/command/super/next
 
-# startup programs
-exec pulseaudio --start
-exec /home/benkaiser/.i3/update_background
-exec --no-startup-id i3-msg 'workspace 0; exec thunderbird'
-exec clipit
-exec CopyAgent
-#exec udiskie --tray
-#exec xflux -l -38.14 -g 144.35
-exec xscreensaver -no-splash
-exec conky
-exec pa-applet
-exec nm-applet
-exec amixer sset Master 20%
-#exec --no-startup-id i3-msg 'workspace 1; exec google-chrome'
-
 # open certain windows in floating mode
 for_window [class="(?i)gnome-calculator"] floating enable
