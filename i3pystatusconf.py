@@ -22,8 +22,12 @@ status.register("disk",
     format="{avail}G",)
 
 status.register("disk",
-    path="/home/benkaiser/HD/",
+    path="/data",
     format="{avail}G",)
 
+status.register("disk",
+    path="/tmp",
+    format="{avail}G",)
 
 status.run()
+# vim: tabstop=4 expandtab shiftwidth=4
