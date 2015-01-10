@@ -71,6 +71,9 @@ bindsym $mod+Shift+Right exec $control next move
 bindsym $mod+Shift+Up exec $control up move
 bindsym $mod+Shift+Down exec $control down move
 
+bindsym $mod+n move scratchpad
+bindsym $mod+Shift+n scratchpad show
+
 # split in horizontal orientation
 bindsym $mod+m split h
 
