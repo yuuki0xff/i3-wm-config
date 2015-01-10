@@ -44,14 +44,14 @@ bindsym $mod+t exec $control dynamic go
 bindsym $mod+Shift+t exec $control dynamic move
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # change focus with tab keys
-bindsym Mod1+Tab focus right
-bindsym Mod1+Shift+Tab focus left
+# bindsym Mod1+Tab focus right
+# bindsym Mod1+Shift+Tab focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left exec $control prev go
@@ -72,7 +72,7 @@ bindsym $mod+Shift+Up exec $control up move
 bindsym $mod+Shift+Down exec $control down move
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+m split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -82,7 +82,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+g fullscreen global
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -140,10 +140,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 3 px or 3 ppt
-        bindsym k resize grow height 3 px or 3 ppt
-        bindsym l resize shrink height 3 px or 3 ppt
-        bindsym semicolon resize grow width 3 px or 3 ppt
+        bindsym h resize shrink width 3 px or 3 ppt
+        bindsym j resize grow height 3 px or 3 ppt
+        bindsym k resize shrink height 3 px or 3 ppt
+        bindsym l resize grow width 3 px or 3 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 3 px or 3 ppt
@@ -154,6 +154,7 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym space mode "default"
 }
 
 bindsym $mod+r mode "resize"
