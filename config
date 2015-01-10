@@ -194,3 +194,4 @@ bindsym XF86HomePage exec nemo
 
 # open certain windows in floating mode
 for_window [class="(?i)gnome-calculator"] floating enable
+# vim: tabstop=8 expandtab shiftwidth=8
