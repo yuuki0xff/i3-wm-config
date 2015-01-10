@@ -163,7 +163,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command python3 /home/yuuki/.i3/i3pystatusconf.py
-        tray_output output
+        tray_output primary
         colors {
                 background #000000
                 separator  #666666
