@@ -219,9 +219,6 @@ bindsym Print exec scrot '%Y-%m-%d_%T_scrot.png' -e 'mv $f ~/Pictures/screenshot
 # screen layout keys
 
 # startup programs
-# exec pulseaudio --start
-exec --no-startup-id i3-msg 'workspace 0; exec geary'
-exec --no-startup-id i3-msg 'workspace 0; exec keepass'
 
 # open certain windows in floating mode
 for_window [window_role="(?i)pop-up"] floating enable
