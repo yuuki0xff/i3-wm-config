@@ -215,7 +215,7 @@ bindsym $mod+XF86AudioRaiseVolume exec amixer sset Master 1%+ && pkill -RTMIN+1 
 bindsym $mod+XF86AudioLowerVolume exec amixer sset Master 1%- && pkill -RTMIN+1 i3blocks
 # mute
 bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
-bindsym $mod+shift+m exec amixer sset Master toggle && killall -USR1 i3blocks
+bindsym $mod+Shift+m exec amixer sset Master toggle && killall -USR1 i3blocks
 
 # other keys
 bindsym XF86Calculator exec gnome-calculator
