@@ -28,12 +28,6 @@ status.register("disk",
     path="/tmp",
     format="{avail}G",)
 
-# Shows pulseaudio default sink volume
-#
-# Note: requires libpulseaudio from PyPI
-status.register("alsa",
-    format="♪ {volume}",)
-
 status.register("text",
     text="Sleep Screen",
     cmd_leftclick="sleep 1; xset dpms force off",
