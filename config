@@ -206,7 +206,7 @@ mode "volume"{
         bindsym Escape mode "default"
         bindsym space mode "default"
 }
-bindsym $mod+o mode "volume"
+bindsym $mod+m mode "volume"
 # volume
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+1 i3blocks
