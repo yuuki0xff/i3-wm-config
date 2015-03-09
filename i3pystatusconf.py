@@ -18,15 +18,15 @@ status.register("load")
 # 42/128G [86G]
 status.register("disk",
     path="/",
-    format="{avail}G",)
+    format="sys {free}G",)
 
 status.register("disk",
     path="/data",
-    format="{avail}G",)
+    format="data {free}G",)
 
 status.register("disk",
     path="/tmp",
-    format="{avail}G",)
+    format="tmp {free}G",)
 
 status.register("text",
     text="Sleep Screen",
