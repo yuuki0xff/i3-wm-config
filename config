@@ -132,12 +132,6 @@ bindsym $mod+y move workspace to output left
 
 bindsym $mod+z workspace back_and_forth
 
-# toggle border
-bindsym $mod+b exec i3-msg border toggle
-
-# boder mode
-new_window 1pixel
-
 # gaps
 #gaps inner 20
 #gaps outer 20
