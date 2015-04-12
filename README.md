@@ -12,4 +12,5 @@ I would recommend just copying parts of my config (as certain parts, such as the
 - py3status - for changing the status bar
 - dmenu - for menu operations
 - python3 - for my workspace controller script
+- amixer - command-line mixer for ALSA soundcard driver
 
