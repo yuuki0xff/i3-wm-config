@@ -13,4 +13,5 @@ I would recommend just copying parts of my config (as certain parts, such as the
 - dmenu - for menu operations
 - python3 - for my workspace controller script
 - amixer - command-line mixer for ALSA soundcard driver
+- xbacklight - adjust backlight brightness using RandR extension
 
