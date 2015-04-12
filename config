@@ -238,6 +238,11 @@ mode "X11"{
         bindsym k exec xbacklight +10
         bindsym j exec xbacklight -10
 
+        # disable mouse
+        bindsym m exec xinput --list|grep "slave  pointer"|grep -v "Virtual "|sed 's@.*id=\([0-9]\+\).*@\1@'|xargs -i@ xinput --disable @
+        # enable mouse
+        bindsym Shift+m exec xinput --list|grep "slave  pointer"|grep -v "Virtual "|sed 's@.*id=\([0-9]\+\).*@\1@'|xargs -i@ xinput --enable @
+
         # back to normal: Enter or Escape or Space
         bindsym Return mode "default"
         bindsym Escape mode "default"
