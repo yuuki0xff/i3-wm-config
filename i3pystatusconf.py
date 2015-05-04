@@ -21,8 +21,8 @@ status.register("disk",
     format="sys {free}G",)
 
 status.register("disk",
-    path="/data",
-    format="data {free}G",)
+    path="/home",
+    format="home {free}G",)
 
 status.register("disk",
     path="/tmp",
