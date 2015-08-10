@@ -207,14 +207,13 @@ bar {
 
 mode "volume"{
         # volume
-        bindsym k exec amixer sset Master 5%+ && pkill -RTMIN+1 i3blocks
-        bindsym j exec amixer sset Master 5%- && pkill -RTMIN+1 i3blocks
+        bindsym k exec pulseaudio-ctl up
+        bindsym j exec pulseaudio-ctl down
         # granular volume control
-        bindsym shift+k exec amixer sset Master 1%+ && pkill -RTMIN+1 i3blocks
-        bindsym shift+j exec amixer sset Master 1%- && pkill -RTMIN+1 i3blocks
+        bindsym shift+k exec pulseaudio-ctl up 1%
+        bindsym shift+j exec pulseaudio-ctl down 1%
         # mute
-        bindsym m exec amixer sset Master toggle && killall -USR1 i3blocks
-        bindsym shift+m exec amixer sset Master off && killall -USR1 i3blocks
+        bindsym m exec pulseaudio-ctl mute
 
         # back to normal: Enter or Escape or Space
         bindsym Return mode "default"
