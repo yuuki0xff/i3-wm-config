@@ -1,5 +1,3 @@
-import subprocess
-
 from i3pystatus import Status
 
 status = Status(standalone=True)
@@ -27,11 +25,6 @@ status.register("disk",
 status.register("disk",
     path="/tmp",
     format="tmp {free}G",)
-
-status.register("text",
-    text="Sleep Screen",
-    cmd_leftclick="sleep 1; xset dpms force off",
-    color="#44bbff")
 
 status.run()
 # vim: tabstop=4 expandtab shiftwidth=4
