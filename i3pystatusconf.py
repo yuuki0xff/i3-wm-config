@@ -7,24 +7,13 @@ status = Status(standalone=True)
 status.register("clock",
     format="%a %-d %b %Y %X",)
 
-# Shows the average load of the last minute and the last 5 minutes
-# (the default value for format is used)
-status.register("load")
+status.register("load",
+        format="Load {avg1} {avg5} {avg15}")
 
-# Shows disk usage of /
-# Format:
-# 42/128G [86G]
-status.register("disk",
-    path="/",
-    format="sys {free}G",)
+status.register("mem",
+        format="MEM {avail_mem} MiB")
 
-status.register("disk",
-    path="/home",
-    format="home {free}G",)
-
-status.register("disk",
-    path="/tmp",
-    format="tmp {free}G",)
+status.register("xkblayout")
 
 status.run()
 # vim: tabstop=4 expandtab shiftwidth=4
