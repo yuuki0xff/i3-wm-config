@@ -19,7 +19,7 @@ status.register("clock",
 
 if list_battery():
     status.register("battery",
-        format='{status} {percentage:.0f}%')
+        format='BAT {status} {percentage:.0f}%')
 
 if is_laptop():
     status.register("network",
