@@ -8,6 +8,9 @@ def list_battery():
         for d in glob.glob("/sys/class/power_supply/BAT*")
     ]
 
+def is_laptop():
+    return 'laptop' in os.uname().nodename
+
 
 status = Status(standalone=True)
 
@@ -17,6 +20,12 @@ status.register("clock",
 if list_battery():
     status.register("battery",
         format='{status} {percentage:.0f}%')
+
+if is_laptop():
+    status.register("network",
+        interface="wlp2s0",
+        format_up="WiFi {v4cidr} {kbs}",
+        format_down="WiFi ❌")
 
 status.register("load",
         format="Load {avg1}")
