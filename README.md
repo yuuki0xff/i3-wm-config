@@ -2,7 +2,7 @@
 
 This is my configuration for the i3 window manager. This is based on [benkaiser/i3-wm-config](https://github.com/benkaiser/i3-wm-config).  
 
-Uses terminator as the terminal.  
+Uses xterm as the terminal.  
 
 I would recommend just copying parts of my config (as certain parts, such as the start up config, may be irrelevent to you). However my workspace_controller.py script is universal.  
 
