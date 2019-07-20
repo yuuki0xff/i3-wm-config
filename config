@@ -262,4 +262,4 @@ client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
-# vim: tabstop=8 expandtab shiftwidth=8
+# vim: ft=i3config tabstop=8 expandtab shiftwidth=8
