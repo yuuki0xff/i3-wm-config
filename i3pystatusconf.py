@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import glob
 import os.path
 from i3pystatus import Status
