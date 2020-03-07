@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # this script is a modification of dmenu_run used
 # to only update the dmenu cache
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
@@ -7,6 +7,10 @@ if [ -d "$cachedir" ]; then
 else
   cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
 fi
+
+# Add prefix to cache file.
+cache=$cache-$(echo "$PATH" |sha1sum |awk '{print $1}')
+
 (
   IFS=:
   if stest -dqr -n "$cache" $PATH; then
