@@ -42,7 +42,7 @@ def dmenu_fetch(inputstr):
 
 def open_app(workspace):
   home = expanduser("~")
-  apps = subprocess.Popen([home + "/.i3/dmenu_update"], stdout=subprocess.PIPE)
+  apps = subprocess.Popen([home + "/.i3/list_apps"], stdout=subprocess.PIPE)
   dmenu_run = subprocess.Popen(["dmenu","-b"], stdout=subprocess.PIPE, stdin=apps.stdout)
   output = (dmenu_run.communicate()[0]).decode().strip()
   subprocess.Popen(["i3-msg","workspace "+workspace+"; exec " + output], stdout=subprocess.PIPE)
