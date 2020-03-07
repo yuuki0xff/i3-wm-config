@@ -13,7 +13,9 @@ cache=$cache-$(echo "$PATH" |sha1sum |awk '{print $1}')
 
 (
   IFS=:
-  if stest -dqr -n "$cache" $PATH; then
+  if [[ ! -f "$cache" ]] || stest -dqr -n "$cache" $PATH; then
     stest -flx $PATH | sort -u | tee "$cache"
+  else
+    cat "$cache"
   fi
 )
