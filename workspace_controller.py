@@ -3,7 +3,6 @@ import subprocess
 import sys
 import json
 import math
-import os
 from os.path import expanduser
 from tempfile import TemporaryFile
 
