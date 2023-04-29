@@ -5,3 +5,6 @@ build:
 
 build-desktop1:
 	./render.py prefix=Mod4
+
+format:
+	black *.py
