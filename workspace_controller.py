@@ -65,7 +65,7 @@ def open_app(workspace):
 
 
 if len(sys.argv) < 1:
-    print("Error not enough arguements")
+    print("Error not enough arguments")
 else:
     command = sys.argv[1]
     switch_number = 1  # default switch number
