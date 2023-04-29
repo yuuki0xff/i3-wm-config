@@ -52,8 +52,7 @@ def dmenu_fetch(inputstr):
 
 
 def open_app(workspace):
-    home = expanduser("~")
-    apps = subprocess.Popen([home + "/.i3/list_apps"], stdout=subprocess.PIPE)
+    apps = subprocess.Popen(["i3-list-apps"], stdout=subprocess.PIPE)
     dmenu_run = subprocess.Popen(
         ["dmenu", "-b"], stdout=subprocess.PIPE, stdin=apps.stdout
     )
@@ -64,9 +63,10 @@ def open_app(workspace):
     )
 
 
-if len(sys.argv) < 1:
-    print("Error not enough arguments")
-else:
+def main():
+    if len(sys.argv) < 1:
+        print("Error not enough arguments")
+
     command = sys.argv[1]
     switch_number = 1  # default switch number
     if len(sys.argv) == 3:
@@ -133,3 +133,7 @@ else:
                 go_to(workspace_prefix + str(workspace_val))
             elif command2 == "move":
                 move_to(workspace_prefix + str(workspace_val))
+
+
+if __name__ == "__main__":
+    main()

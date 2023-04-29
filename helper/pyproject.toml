@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "i3_wm_config"
+version = "1.1.0"
+description = "customized i3-wm config and helper scripts"
+license = {text = "MIT"}
+authors = [
+    {name = "yuuki0xff", email = "yuuki0xff@gmail.com"},
+]
+dependencies = [
+    "i3pystatus",
+    "jinja2",
+    "psutil",
+]
+
+[project.scripts]
+i3-status-bar = "i3_status_bar:main"
+i3-workspace-controller = "i3_workspace_controller:main"
+i3-list-apps = "i3_list_apps:main"

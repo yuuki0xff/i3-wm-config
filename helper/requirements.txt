@@ -1,2 +1,3 @@
 i3pystatus
 jinja2
+psutil

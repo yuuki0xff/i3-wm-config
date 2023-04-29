@@ -7,4 +7,4 @@ build-desktop1:
 	./render.py prefix=Mod4
 
 format:
-	black *.py
+	black *.py helper/src/*.py
