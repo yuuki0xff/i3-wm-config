@@ -1,3 +1,2 @@
 i3pystatus
-psutil
 jinja2
