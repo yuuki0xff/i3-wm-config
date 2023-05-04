@@ -29,4 +29,5 @@ http://www.keyboard-layout-editor.com/#/gists/d103877c434b5f074111a17d837a22d8
 ```bash
 git clone github.com/yuuki0xff/i3-wm-config ~/.i3
 pipx install ~/.i3/helper/
+make -C ~/.i3 build
 ```
