@@ -83,7 +83,8 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
-bindsym $mod+g fullscreen global
+# bindsym $mod+g fullscreen global
+bindsym $mod+g exec "i3-msg 'floating toggle' && wmctrl -e 0,0,0,2160,1920 -r :ACTIVE:"
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+q layout stacking
