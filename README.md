@@ -4,7 +4,7 @@ This is my configuration for the i3 window manager. This is based on [benkaiser/
 
 Uses xterm as the terminal.  
 
-I would recommend just copying parts of my config (as certain parts, such as the start up config, may be irrelevent to you). However my workspace_controller.py script is universal.  
+I would recommend just copying parts of my config (as certain parts, such as the start up config, may be irrelevant to you). However my workspace_controller.py script is universal.  
 
 
 # Keybindings
