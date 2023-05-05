@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import hashlib
+import io
 import os
 import pathlib
 import subprocess
@@ -48,12 +49,17 @@ class AppListCache:
         return False
 
     def update(self):
-        cmd = ["stest", "-flx"] + self.paths
-        with tempfile.NamedTemporaryFile(
+        with tempfile.TemporaryFile() as tmp, tempfile.NamedTemporaryFile(
             dir=self.cache_file.parent, prefix=self.cache_file.name
         ) as f:
-            subprocess.run(cmd, stdout=f, check=True)
+            # List all available command names.
+            subprocess.run(["stest", "-flx"] + self.paths, stdout=tmp, check=True)
+            tmp.seek(0, io.SEEK_SET)
+            tmp.flush()
+            # Sort and dedup command names.
+            subprocess.run(["sort", "-u"], stdin=tmp, stdout=f, check=True)
             f.flush()
+            # Replace the cache file.
             self.cache_file.unlink(missing_ok=True)
             self.cache_file.hardlink_to(f.name)
 
