@@ -1,2 +1,4 @@
 *.pyc*
 config
+helper/build
+*.egg-info
