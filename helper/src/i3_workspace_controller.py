@@ -62,16 +62,15 @@ def open_app(workspace):
         return
 
     subprocess.Popen(
-        ["i3-msg", "workspace " + workspace],
+        [
+            "i3-msg",
+            f"workspace {workspace}; "
+            # Some app writes many logs to stdout or stderr. To prevent flooding journal log with useless messages,
+            # redirect all input and output to /dev/null.
+            # First exec command is the i3 command. Second exec command is shell built-in command.
+            f"exec exec {output} </dev/null >/dev/null 2>&1",
+        ],
         stdout=subprocess.PIPE,
-    )
-    # Some app writes many logs to stdout or stderr. To prevent flooding journal log with useless messages,
-    # redirect all input and output to /dev/null.
-    subprocess.Popen(
-        [output],
-        stdin=subprocess.DEVNULL,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
     )
 
 
