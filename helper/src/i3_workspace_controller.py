@@ -58,8 +58,16 @@ def open_app(workspace):
     )
     output = (dmenu_run.communicate()[0]).decode().strip()
     subprocess.Popen(
-        ["i3-msg", "workspace " + workspace + "; exec " + output],
+        ["i3-msg", "workspace " + workspace],
         stdout=subprocess.PIPE,
+    )
+    # Some app writes many logs to stdout or stderr. To prevent flooding journal log with useless messages,
+    # redirect all input and output to /dev/null.
+    subprocess.Popen(
+        [output],
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
     )
 
 
