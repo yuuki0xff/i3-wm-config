@@ -57,6 +57,10 @@ def open_app(workspace):
         ["dmenu", "-b"], stdout=subprocess.PIPE, stdin=apps.stdout
     )
     output = (dmenu_run.communicate()[0]).decode().strip()
+    if dmenu_run.returncode or len(output) == 0:
+        # dmenu failed or canceled. Stop launching an app.
+        return
+
     subprocess.Popen(
         ["i3-msg", "workspace " + workspace],
         stdout=subprocess.PIPE,
