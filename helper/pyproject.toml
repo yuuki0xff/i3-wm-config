@@ -10,7 +10,10 @@ authors = [
     {name = "yuuki0xff", email = "yuuki0xff@gmail.com"},
 ]
 dependencies = [
-    "i3pystatus",
+    # The policy of the i3pystatus package maintainer, numbered releases will no longer be created. The i3pystatus
+    # should be installed from github.
+    # https://i3pystatus.readthedocs.io/en/latest/installation.html
+    "i3pystatus @ https://github.com/enkore/i3pystatus/archive/refs/heads/current.zip",
     "jinja2",
     "psutil",
 ]
