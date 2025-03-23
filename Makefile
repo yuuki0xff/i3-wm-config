@@ -1,13 +1,15 @@
+ifeq ($(PREFIX_KEY),)
+PREFIX_KEY = Mod4
+endif
+
 .PHONY: all
 all: build
 
 .PHONY: build
-build:
-	$(MAKE) build-$(shell hostname)
+build: config
 
-.PHONY: build-desktop1
-build-desktop1:
-	./render.py prefix=Mod4
+config: config.tmpl render.py Makefile
+	./render.py prefix=$(PREFIX_KEY)
 
 .PHONY: format
 format:

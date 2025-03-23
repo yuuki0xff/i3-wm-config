@@ -29,5 +29,9 @@ http://www.keyboard-layout-editor.com/#/gists/d103877c434b5f074111a17d837a22d8
 ```bash
 git clone github.com/yuuki0xff/i3-wm-config ~/.i3
 pipx install ~/.i3/helper/
+
+# Use Mod4 (super key) as prefix key by default.
 make -C ~/.i3 build
+# Use Mod1 (alt key) as prefix key.
+# make -C ~/.i3 PREFIX_KEY=Mod1 build
 ```
