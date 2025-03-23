@@ -32,7 +32,6 @@ For i3:
 - xautolock - for screen locking
 - i3lock - for screen locking
 
-
 For sway:
 - sway - tiling Wayland compositor
 - grimshot - screenshot tool for sway
@@ -48,4 +47,15 @@ pipx install ~/.i3/helper/
 make -C ~/.i3 build
 # Use Mod1 (alt key) as prefix key.
 # make -C ~/.i3 PREFIX_KEY=Mod1 build
+```
+
+
+# Known issues
+
+No cursor shown when using sway with default settings.
+
+```
+# ~/.config/environment.d/90-sway.conf
+# Workaround: Fix mouse cursor issue in sway. https://github.com/swaywm/sway/issues/3814
+WLR_NO_HARDWARE_CURSORS=1
 ```
