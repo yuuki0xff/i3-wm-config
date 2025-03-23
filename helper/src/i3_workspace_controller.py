@@ -3,13 +3,22 @@ import subprocess
 import sys
 import json
 import math
+import functools
+import os
 from os.path import expanduser
 from tempfile import TemporaryFile
 
+@functools.cache
+def i3msg():
+    if 'WAYLAND_DISPLAY' in os.environ:
+        return 'swaymsg'
+    if 'DISPLAY' in os.environ:
+        return 'i3-msg'
+    raise Exception('No display found')
 
 def get_workspace():
     handle = subprocess.Popen(
-        ["i3-msg", "-t", "get_workspaces"], stdout=subprocess.PIPE
+        [i3msg(), "-t", "get_workspaces"], stdout=subprocess.PIPE
     )
     output = handle.communicate()[0]
     data = json.loads(output.decode())
@@ -21,7 +30,7 @@ def get_workspace():
 
 def get_workspaces():
     handle = subprocess.Popen(
-        ["i3-msg", "-t", "get_workspaces"], stdout=subprocess.PIPE
+        [i3msg(), "-t", "get_workspaces"], stdout=subprocess.PIPE
     )
     output = handle.communicate()[0]
     data = json.loads(output.decode())
@@ -34,12 +43,12 @@ def get_workspaces():
 
 def move_to(num):
     subprocess.Popen(
-        ["i3-msg", "move container to workspace " + str(num)], stdout=subprocess.PIPE
+        [i3msg(), "move container to workspace " + str(num)], stdout=subprocess.PIPE
     )
 
 
 def go_to(num):
-    subprocess.Popen(["i3-msg", "workspace " + str(num)], stdout=subprocess.PIPE)
+    subprocess.Popen([i3msg(), "workspace " + str(num)], stdout=subprocess.PIPE)
 
 
 def dmenu_fetch(inputstr):
@@ -63,7 +72,7 @@ def open_app(workspace):
 
     subprocess.Popen(
         [
-            "i3-msg",
+            i3msg(),
             f"workspace {workspace}; "
             # Some app writes many logs to stdout or stderr. To prevent flooding journal log with useless messages,
             # redirect all input and output to /dev/null.
