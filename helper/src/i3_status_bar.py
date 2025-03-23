@@ -30,7 +30,6 @@ def main():
     status.register("load", format="Load {avg1}")
     status.register("mem", format="MEM {avail_mem} MiB")
     status.register("shell", command="hostname")
-    status.register("xkblayout")
     status.run()
 
 

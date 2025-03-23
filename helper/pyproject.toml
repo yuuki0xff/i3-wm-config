@@ -16,8 +16,6 @@ dependencies = [
     "i3pystatus @ https://github.com/enkore/i3pystatus/archive/refs/heads/current.zip",
     "jinja2",
     "psutil",
-    # The xkbgroup module in i3pystatus requires it.
-    "xkbgroup",
 ]
 
 [project.scripts]
