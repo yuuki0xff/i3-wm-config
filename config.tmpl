@@ -211,7 +211,7 @@ bar {
         }
 }
 
-mode "volume"{
+mode "volume" {
         # volume
         bindsym k exec pulseaudio-ctl up
         bindsym j exec pulseaudio-ctl down
@@ -238,7 +238,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
 bindsym $mod+Shift+m exec amixer sset Master toggle && killall -USR1 i3blocks
 
 # X11 setting mode
-mode "X11"{
+mode "X11" {
         # backlight control
         bindsym k exec xbacklight +10
         bindsym j exec xbacklight -10
