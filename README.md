@@ -22,7 +22,13 @@ http://www.keyboard-layout-editor.com/#/gists/d103877c434b5f074111a17d837a22d8
 - dmenu - for menu operations
 - python3 - for my workspace controller script
 - amixer - command-line mixer for ALSA soundcard driver
+- pulseaudio-ctl - for volume control (https://github.com/graysky2/pulseaudio-ctl)
 - xbacklight - adjust backlight brightness using RandR extension
+- scrot - screen capture tool for X11
+- xinput - for mouse control
+- xautolock - for screen locking
+- i3lock - for screen locking
+
 
 # Installation
 
