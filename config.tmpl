@@ -260,6 +260,10 @@ bindsym Print exec mkdir -p $screenshots && cd $screenshots && scrot
 
 # screen layout keys
 
+# When using gdm3 and sway, user session environment variables don't get updated automatically.
+# Since the exact cause is unclear, we need to import them during startup.
+exec_always --no-startup-id systemctl --user import-environment
+
 # startup programs
 exec --no-startup-id nm-applet
 exec --no-startup-id xautolock -time 10 -locker xlock
